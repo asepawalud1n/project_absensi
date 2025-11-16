@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(\App\Filament\Pages\Auth\Login::class)
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU GURU
                 if ($user && $user->role === 'guru') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Dasbor')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Data Siswa')
@@ -67,7 +67,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU SISWA
                 if ($user && $user->role === 'siswa') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Dasbor')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Absensi Saya')
@@ -78,7 +78,7 @@ class AdminPanelProvider extends PanelProvider
 
                 // MENU ADMIN (default)
                 return $builder->items([
-                    NavigationItem::make('Dashboard')
+                    NavigationItem::make('Dasbor')
                         ->icon('heroicon-o-home')
                         ->url('/admin'),
                     NavigationItem::make('Kelola Admin') 
