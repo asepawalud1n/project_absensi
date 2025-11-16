@@ -13,7 +13,7 @@ class ListAdmins extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()->label('Tambah Admin'),
+            // Tombol tambah admin dipindahkan ke table header
         ];
     }
 }
