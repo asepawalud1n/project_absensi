@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login(\App\Filament\Pages\Auth\Login::class)
+            ->login()
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
@@ -102,6 +102,30 @@ class AdminPanelProvider extends PanelProvider
                 ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
+            ->renderHook('panels::auth.login.form.before', fn () => view('filament.login-header'))
+            ->renderHook('panels::styles.before', fn () => new \Illuminate\Support\HtmlString('
+                <style>
+                    /* Hide default login heading */
+                    .fi-simple-page h2.fi-simple-page-heading {
+                        display: none;
+                    }
+                    /* Adjust login form spacing */
+                    .fi-simple-page form {
+                        margin-top: -1rem;
+                    }
+                    /* Mobile responsive footer */
+                    @media (max-width: 640px) {
+                        footer .flex {
+                            flex-direction: column;
+                            gap: 0.5rem;
+                        }
+                        footer .flex-1 {
+                            width: 100%;
+                            text-align: center !important;
+                        }
+                    }
+                </style>
+            '))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
