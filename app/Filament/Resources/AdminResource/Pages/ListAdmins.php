@@ -13,7 +13,20 @@ class ListAdmins extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()->label('Tambah Admin'),
+            Actions\CreateAction::make()
+                ->label('Tambah Admin')
+                ->icon('heroicon-o-plus-circle')
+                ->color('primary'),
         ];
+    }
+
+    public function getTitle(): string
+    {
+        return 'Kelola Admin';
+    }
+
+    public function getHeading(): string
+    {
+        return 'Daftar Admin';
     }
 }

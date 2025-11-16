@@ -1,0 +1,86 @@
+/* Custom Filament Admin Styling */
+
+/* Login Page Styling */
+.fi-simple-page {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800;
+}
+
+.fi-simple-page .fi-simple-main {
+    @apply w-full max-w-md mx-auto;
+}
+
+.fi-simple-page .fi-simple-main-ctn {
+    @apply shadow-2xl rounded-xl bg-white dark:bg-gray-800 p-8;
+}
+
+.fi-simple-page .fi-simple-header {
+    @apply text-center mb-6;
+}
+
+.fi-simple-page .fi-simple-header-heading {
+    @apply text-3xl font-bold text-gray-900 dark:text-white;
+}
+
+.fi-simple-page .fi-simple-header-subheading {
+    @apply text-sm text-gray-600 dark:text-gray-400 mt-2;
+}
+
+/* Form Input Styling */
+.fi-simple-page input[type="email"],
+.fi-simple-page input[type="password"] {
+    @apply rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500;
+}
+
+/* Button Styling */
+.fi-simple-page .fi-btn-primary {
+    @apply w-full rounded-lg py-3 font-semibold;
+}
+
+/* Admin List Page Styling */
+.fi-resource-list-records {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm;
+}
+
+/* Header Actions Container */
+.fi-page-header {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-6;
+}
+
+.fi-page-header-actions {
+    @apply flex items-center gap-3;
+}
+
+/* Ensure header actions are properly contained */
+.fi-page-header-ctn {
+    @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full;
+}
+
+/* Table Container */
+.fi-ta {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden;
+}
+
+/* Card Styling */
+.fi-section {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+}
+
+/* Improve button appearance */
+.fi-btn {
+    @apply rounded-lg transition-all duration-200;
+}
+
+.fi-btn-primary {
+    @apply shadow-sm hover:shadow-md;
+}
+
+/* Responsive fixes for header actions */
+@media (max-width: 640px) {
+    .fi-page-header-ctn {
+        @apply flex-col items-stretch;
+    }
+
+    .fi-page-header-actions {
+        @apply w-full justify-end;
+    }
+}
