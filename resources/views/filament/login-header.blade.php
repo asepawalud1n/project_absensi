@@ -6,6 +6,6 @@
         SMK BINTANG NUSANTARA
     </h1>
     <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
-        Masuk ke akun Anda
+        Sign in to your account
     </p>
 </div>

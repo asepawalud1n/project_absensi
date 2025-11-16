@@ -32,6 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
+            ->locale('en')
             ->brandLogo(fn () => view('filament.sidebar-brand'))
             ->brandName('')
             ->colors([
@@ -156,10 +157,10 @@ class AdminPanelProvider extends PanelProvider
     {
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
             return (new MailMessage)
-                ->subject('Verifikasi Alamat Email')
-                ->line('Silakan klik tombol di bawah untuk memverifikasi alamat email Anda.')
-                ->action('Verifikasi Alamat Email', $url)
-                ->line('Jika Anda tidak membuat akun, abaikan email ini.');
+                ->subject('Verify Email Address')
+                ->line('Please click the button below to verify your email address.')
+                ->action('Verify Email Address', $url)
+                ->line('If you did not create an account, no further action is required.');
         });
     }
 }

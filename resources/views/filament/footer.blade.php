@@ -3,7 +3,7 @@
         <div class="flex-1"></div>
         <div class="flex-1 text-center">
             <p class="text-xs text-gray-400">
-                &copy; {{ date('Y') }} SMK BINUSA. Semua hak cipta dilindungi.
+                &copy; {{ date('Y') }} SMK BINUSA. All rights reserved.
             </p>
         </div>
         <div class="flex-1 text-right">
