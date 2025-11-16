@@ -1,11 +1,13 @@
-<footer class="py-2 border-t border-gray-700">
-    <div class="flex justify-end px-4">
-        <div class="text-right">
-            <p class="text-xs text-gray-400">
+<footer class="py-3 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex flex-col sm:flex-row justify-between items-center px-6 gap-2">
+        <div class="text-center sm:text-left">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
                 &copy; {{ date('Y') }} SMK BINUSA. All rights reserved.
             </p>
-            <p class="text-[7px] !text-[7px] text-gray-500 italic">
-                Dev with ❤️ Asep Awaludin
+        </div>
+        <div class="text-center sm:text-right">
+            <p class="text-xs text-gray-500 dark:text-gray-400 italic">
+                Developed with <span class="text-red-500">❤️</span> by Asep Awaludin
             </p>
         </div>
     </div>

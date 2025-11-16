@@ -84,6 +84,11 @@ class AdminResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->headerActions([
+                Tables\Actions\CreateAction::make()
+                    ->label('Tambah Admin')
+                    ->icon('heroicon-o-plus'),
+            ])
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->label('Nama Admin')
