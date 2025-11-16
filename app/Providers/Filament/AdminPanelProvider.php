@@ -8,6 +8,7 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationBuilder;
 use Filament\Navigation\NavigationItem;
+use App\Filament\Pages\Auth\Login;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -29,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(Login::class)
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
@@ -49,7 +50,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU GURU
                 if ($user && $user->role === 'guru') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Beranda')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Data Siswa')
@@ -67,7 +68,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU SISWA
                 if ($user && $user->role === 'siswa') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Beranda')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Absensi Saya')
@@ -78,12 +79,9 @@ class AdminPanelProvider extends PanelProvider
 
                 // MENU ADMIN (default)
                 return $builder->items([
-                    NavigationItem::make('Dashboard')
+                    NavigationItem::make('Beranda')
                         ->icon('heroicon-o-home')
                         ->url('/admin'),
-                    NavigationItem::make('Kelola Admin') 
-                        ->icon('heroicon-o-shield-check')
-                        ->url('/admin/admins'),
                     NavigationItem::make('Data Guru')
                         ->icon('heroicon-o-user-group')
                         ->url('/admin/teachers'),
@@ -99,6 +97,9 @@ class AdminPanelProvider extends PanelProvider
                     NavigationItem::make('Rekap Absen')
                         ->icon('heroicon-o-chart-bar')
                         ->url('/admin/attendance-recap'),
+                    NavigationItem::make('Kelola Admin')
+                        ->icon('heroicon-o-shield-check')
+                        ->url('/admin/admins'),
                 ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
