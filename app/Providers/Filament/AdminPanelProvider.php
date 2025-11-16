@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            ->login(\App\Filament\Pages\Auth\Login::class)
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
@@ -81,9 +81,6 @@ class AdminPanelProvider extends PanelProvider
                     NavigationItem::make('Dashboard')
                         ->icon('heroicon-o-home')
                         ->url('/admin'),
-                    NavigationItem::make('Kelola Admin') 
-                        ->icon('heroicon-o-shield-check')
-                        ->url('/admin/admins'),
                     NavigationItem::make('Data Guru')
                         ->icon('heroicon-o-user-group')
                         ->url('/admin/teachers'),
@@ -99,6 +96,9 @@ class AdminPanelProvider extends PanelProvider
                     NavigationItem::make('Rekap Absen')
                         ->icon('heroicon-o-chart-bar')
                         ->url('/admin/attendance-recap'),
+                    NavigationItem::make('Kelola Admin')
+                        ->icon('heroicon-o-shield-check')
+                        ->url('/admin/admins'),
                 ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
