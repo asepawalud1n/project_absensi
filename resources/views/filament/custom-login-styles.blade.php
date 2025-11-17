@@ -1,79 +1,84 @@
 <style>
-    /* Custom Login Form - Ultra Minimalis & Compact */
+    /* Custom Login Form - Minimalis & Proporsional */
     .fi-simple-main {
-        max-width: 320px !important;
+        max-width: 420px !important;
     }
 
     @media (min-width: 768px) {
         .fi-simple-main {
-            max-width: 300px !important;
+            max-width: 400px !important;
         }
     }
 
-    /* Ultra Compact Spacing */
+    /* Spacing yang Nyaman */
     .fi-simple-page {
-        padding: 0.75rem !important;
+        padding: 1.5rem !important;
     }
 
     .fi-simple-main .fi-section {
-        padding: 0.875rem !important;
+        padding: 1.75rem !important;
+        border-radius: 0.75rem !important;
     }
 
-    /* Super Small Input Fields */
+    /* Input Fields yang Nyaman */
     .fi-simple-main .fi-input-wrp {
-        padding: 0.375rem 0.5rem !important;
-        min-height: auto !important;
+        padding: 0.625rem 0.875rem !important;
+        min-height: 2.75rem !important;
+        border-radius: 0.5rem !important;
     }
 
     .fi-simple-main .fi-input {
-        font-size: 0.813rem !important;
-        padding: 0 !important;
+        font-size: 0.9375rem !important;
     }
 
-    /* Ultra Compact Form Fields */
+    /* Form Fields dengan Spacing Baik */
     .fi-simple-main .fi-fo-field-wrp {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .fi-simple-main .fi-fo-field-wrp-label {
-        margin-bottom: 0.25rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .fi-simple-main .fi-fo-field-wrp-label .fi-fo-field-wrp-label-text {
-        font-size: 0.75rem !important;
+        font-size: 0.875rem !important;
+        font-weight: 500 !important;
     }
 
-    /* Compact Button */
+    /* Button yang Proporsional */
     .fi-simple-main .fi-btn {
-        padding: 0.375rem 0.75rem !important;
-        font-size: 0.813rem !important;
-        min-height: auto !important;
-    }
-
-    /* Compact Heading */
-    .fi-simple-main .fi-header-heading {
-        font-size: 1rem !important;
-        margin-bottom: 0.5rem !important;
+        padding: 0.625rem 1.25rem !important;
+        font-size: 0.9375rem !important;
+        min-height: 2.75rem !important;
         font-weight: 600 !important;
+        border-radius: 0.5rem !important;
     }
 
-    /* Remove extra spacing */
-    .fi-simple-main .fi-form-component-container {
-        margin: 0 !important;
+    /* Heading yang Jelas */
+    .fi-simple-main .fi-header-heading {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        color: #1f2937 !important;
     }
 
-    /* Compact checkbox/remember me */
+    .dark .fi-simple-main .fi-header-heading {
+        color: #f9fafb !important;
+    }
+
+    /* Checkbox yang Nyaman */
     .fi-simple-main .fi-checkbox-wrp {
-        padding: 0.25rem !important;
+        padding: 0.5rem !important;
     }
 
     .fi-simple-main .fi-fo-checkbox {
-        font-size: 0.75rem !important;
+        font-size: 0.875rem !important;
     }
 
-    /* Compact form actions */
+    /* Form actions spacing */
     .fi-simple-main .fi-form-actions {
-        margin-top: 0.75rem !important;
+        margin-top: 1.5rem !important;
     }
 </style>
 
@@ -82,7 +87,7 @@
         // Ganti heading login
         const heading = document.querySelector('.fi-simple-main .fi-header-heading');
         if (heading) {
-            heading.textContent = 'Masuk ke akun Anda';
+            heading.textContent = 'Masuk ke Akun Anda';
         }
     });
 </script>

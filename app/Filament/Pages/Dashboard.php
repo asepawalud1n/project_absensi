@@ -14,6 +14,16 @@ class Dashboard extends BaseDashboard
         return 'Beranda';
     }
 
+    public function getTitle(): string
+    {
+        return 'Beranda';
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [];
+    }
+
     public function getColumns(): int | string | array
     {
         return 12;
