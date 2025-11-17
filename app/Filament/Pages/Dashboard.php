@@ -11,7 +11,7 @@ class Dashboard extends BaseDashboard
     protected static ?string $title = 'Beranda';
 
     // Instance property untuk heading (PRIORITAS TERTINGGI!)
-    protected string | \Illuminate\Contracts\Support\Htmlable $heading = 'Beranda';
+    protected ?string $heading = 'Beranda';
 
     // Override getHeading() - Method untuk heading halaman
     public function getHeading(): string | \Illuminate\Contracts\Support\Htmlable
