@@ -223,7 +223,9 @@ class AttendanceResource extends Resource
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label('Buat Kelola Absen Siswa'),
+                    ->label('Buat Kelola Absen Siswa')
+                    ->icon('heroicon-o-plus')
+                    ->color('primary'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
