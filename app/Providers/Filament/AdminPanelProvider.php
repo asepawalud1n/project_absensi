@@ -32,7 +32,6 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
-            ->locale('id')
             ->brandLogo(fn () => view('filament.sidebar-brand'))
             ->brandName('')
             ->colors([
