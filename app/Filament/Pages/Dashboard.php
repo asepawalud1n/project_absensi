@@ -6,17 +6,35 @@ use Filament\Pages\Dashboard as BaseDashboard;
 
 class Dashboard extends BaseDashboard
 {
+    // Static properties untuk navigation dan title
     protected static ?string $navigationLabel = 'Beranda';
     protected static ?string $title = 'Beranda';
 
-    public function getHeading(): string
+    // Instance property untuk heading (PRIORITAS TERTINGGI!)
+    protected ?string $heading = 'Beranda';
+
+    // Override getHeading() - Method untuk heading halaman
+    public function getHeading(): string | \Illuminate\Contracts\Support\Htmlable
     {
         return 'Beranda';
     }
 
-    public function getTitle(): string
+    // Override getTitle() - Untuk browser tab title
+    public function getTitle(): string | \Illuminate\Contracts\Support\Htmlable
     {
         return 'Beranda';
+    }
+
+    // Override getNavigationLabel() - Untuk sidebar
+    public static function getNavigationLabel(): string
+    {
+        return 'Beranda';
+    }
+
+    // Mount hook untuk memastikan heading di-set saat component di-load
+    public function mount(): void
+    {
+        $this->heading = 'Beranda';
     }
 
     protected function getHeaderWidgets(): array
