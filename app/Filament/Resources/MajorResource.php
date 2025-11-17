@@ -91,7 +91,9 @@ class MajorResource extends Resource
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label('Buat Jurusan'),
+                    ->label('Buat Jurusan')
+                    ->icon('heroicon-o-plus')
+                    ->color('primary'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->label('Ubah'),

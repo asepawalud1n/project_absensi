@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU GURU
                 if ($user && $user->role === 'guru') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Beranda')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Data Siswa')
@@ -67,7 +67,7 @@ class AdminPanelProvider extends PanelProvider
                 // MENU SISWA
                 if ($user && $user->role === 'siswa') {
                     return $builder->items([
-                        NavigationItem::make('Dashboard')
+                        NavigationItem::make('Beranda')
                             ->icon('heroicon-o-home')
                             ->url('/admin'),
                         NavigationItem::make('Absensi Saya')
@@ -78,12 +78,9 @@ class AdminPanelProvider extends PanelProvider
 
                 // MENU ADMIN (default)
                 return $builder->items([
-                    NavigationItem::make('Dashboard')
+                    NavigationItem::make('Beranda')
                         ->icon('heroicon-o-home')
                         ->url('/admin'),
-                    NavigationItem::make('Kelola Admin') 
-                        ->icon('heroicon-o-shield-check')
-                        ->url('/admin/admins'),
                     NavigationItem::make('Data Guru')
                         ->icon('heroicon-o-user-group')
                         ->url('/admin/teachers'),
@@ -99,9 +96,13 @@ class AdminPanelProvider extends PanelProvider
                     NavigationItem::make('Rekap Absen')
                         ->icon('heroicon-o-chart-bar')
                         ->url('/admin/attendance-recap'),
+                    NavigationItem::make('Kelola Admin')
+                        ->icon('heroicon-o-shield-check')
+                        ->url('/admin/admins'),
                 ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
+            ->renderHook('panels::head.end', fn () => view('filament.custom-login-styles'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
