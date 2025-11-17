@@ -6,6 +6,9 @@ use Filament\Pages\Dashboard as BaseDashboard;
 
 class Dashboard extends BaseDashboard
 {
+    // Custom view untuk force heading
+    protected static string $view = 'filament.pages.dashboard';
+
     // Static properties untuk navigation dan title
     protected static ?string $navigationLabel = 'Beranda';
     protected static ?string $title = 'Beranda';
