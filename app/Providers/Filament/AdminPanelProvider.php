@@ -8,7 +8,6 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationBuilder;
 use Filament\Navigation\NavigationItem;
-use App\Filament\Pages\Auth\Login;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -30,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login(Login::class)
+            ->login()
             ->profile(\App\Filament\Pages\CustomProfile::class)
             ->emailVerification()
             ->brandLogo(fn () => view('filament.sidebar-brand'))
@@ -103,6 +102,7 @@ class AdminPanelProvider extends PanelProvider
                 ]);
             })
             ->renderHook('panels::footer', fn () => view('filament.footer'))
+            ->renderHook('panels::head.end', fn () => view('filament.custom-login-styles'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
