@@ -187,7 +187,10 @@ class StudentResource extends Resource
             ->headerActions(
                 // Hanya tampilkan header actions untuk admin
                 $isAdmin ? [
-                    Tables\Actions\CreateAction::make()->label('Tambah Siswa'),
+                    Tables\Actions\CreateAction::make()
+                        ->label('Tambah Siswa')
+                        ->icon('heroicon-o-plus')
+                        ->color('primary'),
                     Tables\Actions\Action::make('importExcel')
                         ->label('Import Excel')
                         ->icon('heroicon-o-arrow-up-tray')
