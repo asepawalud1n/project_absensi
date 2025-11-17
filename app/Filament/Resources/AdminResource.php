@@ -125,6 +125,12 @@ class AdminResource extends Resource
                         blank: fn (Builder $query) => $query,
                     ),
             ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make()
+                    ->label('Tambah Admin')
+                    ->icon('heroicon-o-plus')
+                    ->color('primary'),
+            ])
             ->actions([
                 Tables\Actions\EditAction::make()->label('Ubah'),
                 Tables\Actions\DeleteAction::make()
